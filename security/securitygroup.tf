@@ -1,5 +1,5 @@
 resource "aws_default_security_group" "default" {
-  vpc_id = data.terraform_remote_state.network.outputs.aws_vpc_subnet_ids["vpc_main"]
+  vpc_id = data.terraform_remote_state.network.outputs.aws_vpc_subnet_ids["vpc"]
 
   ingress {
     protocol  = -1
@@ -28,9 +28,9 @@ resource "aws_default_security_group" "default" {
 }
 
 resource "aws_security_group" "ssh" {
-  name   = "ssh"
+  name        = "ssh"
   description = "Allow ssh access"
-  vpc_id = data.terraform_remote_state.network.outputs.aws_vpc_subnet_ids["vpc_main"]
+  vpc_id      = data.terraform_remote_state.network.outputs.aws_vpc_subnet_ids["vpc"]
 
   lifecycle {
     ignore_changes = [ingress]
