@@ -1,8 +1,8 @@
 output "security_group_ids" {
-  value = map(
-    "default", aws_default_security_group.default.id,
-    "ssh", aws_security_group.ssh.id,
-  )
+  value = {
+    default = aws_default_security_group.default.id
+    ssh = aws_security_group.ssh.id
+  }
 }
 
 output "general_key_pair" {
