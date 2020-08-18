@@ -1,5 +1,5 @@
 resource "aws_instance" "bastion" {
-  ami                  = "ami-0edf7f6a9013cfb72" # most recent ubuntu ami as of 2020/08/01
+  ami                  = "ami-01c36f3329957b16a" # Ubuntu Server 18.04 LTS (HVM), SSD Volume Type
   instance_type        = "t2.micro"
   key_name             = data.terraform_remote_state.security.outputs.general_key_pair
   subnet_id            = data.terraform_remote_state.network.outputs.aws_vpc_subnet_ids["public_subnet_az1"]
