@@ -12,6 +12,6 @@ provider "aws" {
   region = "ap-northeast-1"
 }
 
-variable "service_name" {
-  default = "main"
+variable "account_name" {
+  default = "juv-shun"
 }
