@@ -23,7 +23,7 @@ resource "aws_default_security_group" "default" {
   }
 
   tags = {
-    Name = "[${var.service_name}] default"
+    Name = "[${var.network_name}] default"
   }
 }
 
@@ -44,6 +44,6 @@ resource "aws_security_group" "ssh" {
   }
 
   tags = {
-    Name = "[${var.service_name}] ssh"
+    Name = "[${var.network_name}] ssh"
   }
 }

@@ -31,3 +31,7 @@ data "terraform_remote_state" "security" {
     region = "ap-northeast-1"
   }
 }
+
+variable "server_name" {
+  default = "fukusumi-practice-bastion"
+}

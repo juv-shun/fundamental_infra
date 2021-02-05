@@ -15,17 +15,17 @@ sudo timedatectl set-timezone Asia/Tokyo
 EOF
 
   tags = {
-    Name = "bastion"
+    Name = var.server_name
   }
 }
 
 resource "aws_iam_instance_profile" "bastion_profile" {
-  name = "bastion"
+  name = var.server_name
   role = aws_iam_role.bastion_role.name
 }
 
 resource "aws_iam_role" "bastion_role" {
-  name = "bastion"
+  name = var.server_name
 
   assume_role_policy = <<EOF
 {

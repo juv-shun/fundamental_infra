@@ -22,6 +22,6 @@ data "terraform_remote_state" "network" {
   }
 }
 
-variable "service_name" {
-  default = "main"
+variable "network_name" {
+  default = "fukusumi-practice"
 }

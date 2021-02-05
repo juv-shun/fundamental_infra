@@ -12,6 +12,6 @@ provider "aws" {
   region = "ap-northeast-1"
 }
 
-variable "service_name" {
-  default = "main"
+variable "network_name" {
+  default = "fukusumi-practice"
 }

@@ -23,7 +23,7 @@
 #   }
 
 #   tags = {
-#     Name = "[${var.service_name}] nat_gw_az1"
+#     Name = "[${var.network_name}] nat_gw_az1"
 #   }
 # }
 
@@ -36,7 +36,7 @@
 #   }
 
 #   tags = {
-#     Name = "[${var.service_name}] nat_gw_az2"
+#     Name = "[${var.network_name}] nat_gw_az2"
 #   }
 # }
 
@@ -60,7 +60,7 @@
 #   vpc = true
 
 #   tags = {
-#     Name = "[${var.service_name}] gw_eip_az1"
+#     Name = "[${var.network_name}] gw_eip_az1"
 #   }
 # }
 
@@ -68,6 +68,6 @@
 #   vpc = true
 
 #   tags = {
-#     Name = "[${var.service_name}] gw_eip_az2"
+#     Name = "[${var.network_name}] gw_eip_az2"
 #   }
 # }

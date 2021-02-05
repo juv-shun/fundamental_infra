@@ -8,7 +8,7 @@ resource "aws_vpc" "main" {
   enable_dns_hostnames = true
 
   tags = {
-    Name = var.service_name
+    Name = var.network_name
   }
 }
 
@@ -22,7 +22,7 @@ resource "aws_subnet" "public_subnet_az1" {
   availability_zone = "ap-northeast-1a"
 
   tags = {
-    Name = "[${var.service_name}] public_subnet_az1"
+    Name = "[${var.network_name}] public_subnet_az1"
   }
 }
 
@@ -33,7 +33,7 @@ resource "aws_subnet" "public_subnet_az2" {
   availability_zone = "ap-northeast-1c"
 
   tags = {
-    Name = "[${var.service_name}] public_subnet_az2"
+    Name = "[${var.network_name}] public_subnet_az2"
   }
 }
 
@@ -47,7 +47,7 @@ resource "aws_subnet" "private_subnet_az1" {
   availability_zone = "ap-northeast-1a"
 
   tags = {
-    Name = "[${var.service_name}] private_subnet_az1"
+    Name = "[${var.network_name}] private_subnet_az1"
   }
 }
 
@@ -58,7 +58,7 @@ resource "aws_subnet" "private_subnet_az2" {
   availability_zone = "ap-northeast-1c"
 
   tags = {
-    Name = "[${var.service_name}] private_subnet_az2"
+    Name = "[${var.network_name}] private_subnet_az2"
   }
 }
 
@@ -68,7 +68,7 @@ resource "aws_subnet" "private_subnet_az2" {
 resource "aws_internet_gateway" "i_gw" {
   vpc_id = aws_vpc.main.id
   tags = {
-    Name = var.service_name
+    Name = var.network_name
   }
 }
 
@@ -83,7 +83,7 @@ resource "aws_route_table" "igw_route" {
     gateway_id = aws_internet_gateway.i_gw.id
   }
   tags = {
-    Name = var.service_name
+    Name = var.network_name
   }
 }
 
