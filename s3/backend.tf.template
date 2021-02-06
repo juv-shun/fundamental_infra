@@ -2,7 +2,7 @@ terraform {
   required_version = ">= 0.12"
 
   backend "s3" {
-    bucket = "juv-shun.tfstate"
+    bucket = ""
     key    = "foundation/s3/tfstate.tf"
     region = "ap-northeast-1"
   }
