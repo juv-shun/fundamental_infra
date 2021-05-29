@@ -1,7 +1,6 @@
 output "security_group_ids" {
   value = {
     default = aws_default_security_group.default.id
-    ssh = aws_security_group.ssh.id
   }
 }
 
