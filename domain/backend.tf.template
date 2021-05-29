@@ -23,5 +23,5 @@ data "terraform_remote_state" "network" {
 }
 
 variable "host_zone" {
-  default = "juv-shun.jp"
+  default = ""
 }

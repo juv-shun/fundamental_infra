@@ -13,5 +13,5 @@ provider "aws" {
 }
 
 variable "account_name" {
-  default = "juv-shun"
+  default = ""
 }

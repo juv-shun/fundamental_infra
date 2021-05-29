@@ -13,5 +13,5 @@ provider "aws" {
 }
 
 variable "network_name" {
-  default = "fukusumi-practice"
+  default = ""
 }
