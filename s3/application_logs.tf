@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "application_logs" {
-  bucket = "${var.account_name}.application-logs"
+  bucket = "${var.service_name}.application-logs"
 
   lifecycle_rule {
     id      = "delete object that elapsed 30 days"
@@ -19,7 +19,7 @@ resource "aws_s3_bucket_public_access_block" "application_logs" {
 }
 
 resource "aws_iam_policy" "put_application_log_bucket_policy" {
-  name = "${var.account_name}-put_application_log_bucket_policy"
+  name = "${var.service_name}-put_application_log_bucket_policy"
 
   policy = <<EOF
 {

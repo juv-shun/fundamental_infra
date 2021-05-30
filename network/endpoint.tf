@@ -12,6 +12,6 @@ resource "aws_vpc_endpoint" "s3" {
   ]
 
   tags = {
-    Name = "[${var.network_name}] vpc_endpoint_s3"
+    Name = "[${var.service_name}] vpc_endpoint_s3"
   }
 }

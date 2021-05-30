@@ -18,7 +18,7 @@
 #   vpc = true
 
 #   tags = {
-#     Name = "[${var.network_name}] gw_eip_az1"
+#     Name = "[${var.service_name}] gw_eip_az1"
 #   }
 # }
 
@@ -26,6 +26,6 @@
 #   vpc = true
 
 #   tags = {
-#     Name = "[${var.network_name}] gw_eip_az2"
+#     Name = "[${var.service_name}] gw_eip_az2"
 #   }
 # }

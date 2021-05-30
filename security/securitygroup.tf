@@ -23,6 +23,6 @@ resource "aws_default_security_group" "default" {
   }
 
   tags = {
-    Name = "[${var.network_name}] default"
+    Name = "[${var.service_name}] default"
   }
 }
