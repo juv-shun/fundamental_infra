@@ -20,25 +20,14 @@ resource "aws_s3_bucket_public_access_block" "application_logs" {
 
 resource "aws_iam_policy" "put_application_log_bucket_policy" {
   name = "${var.service_name}-put_application_log_bucket_policy"
-
-  policy = <<EOF
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AllowAccessToS3ApplicationLogBucket",
-            "Effect": "Allow",
-            "Action": [
-              "s3:ListObject",
-              "s3:GetObject",
-              "s3:PutObject",
-              "s3:DeleteObject"
-            ],
-            "Resource": [
-               "arn:aws:s3:::${aws_s3_bucket.application_logs.id}/*"
-            ]
-        }
-    ]
+  policy = data.aws_iam_policy_document.application_logs.json
 }
-EOF
+
+data "aws_iam_policy_document" "application_logs" {
+  statement {
+    effect    = "Allow"
+    sid       = "AllowAccessToS3ApplicationLogBucket"
+    actions   = ["s3:PutObject"]
+    resources = ["arn:aws:s3:::${aws_s3_bucket.application_logs.id}/*"]
+  }
 }
